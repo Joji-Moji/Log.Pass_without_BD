@@ -6,6 +6,6 @@
     <string name="hintEmail">E-mail</string>
     <string name="hintName">Name</string>
     <string name="hintSurName">Surname</string>
-
-
+    <string name="buttonAvatar">Avatar</string>
+    <string name="avatar">Avatar</string>
 </resources>

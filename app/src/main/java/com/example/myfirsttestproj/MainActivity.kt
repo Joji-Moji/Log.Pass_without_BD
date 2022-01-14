@@ -9,9 +9,17 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.myfirsttestproj.Constance.Constance_key.keyRegister
 import com.example.myfirsttestproj.Constance.Constance_key.keySingIn
+import com.example.myfirsttestproj.Constance.Constance_key.keyStateSignIn
 import com.example.myfirsttestproj.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private var name = "empty"
+    private var surname = "empty"
+    private var email = "empty"
+    private var password = "empty"
+    private var avatarImageId = 0 // нужно для получения картинки, в папке drawble получаем числа поэтому Int
+
 
 private lateinit var viewBinding: ActivityMainBinding
 
@@ -26,14 +34,14 @@ private var launcherRegister: ActivityResultLauncher<Intent>? = null //созд�
         launcherLogin = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {// регистрирует
                 result: ActivityResult ->
             if (result.resultCode == RESULT_OK) {//если всё окей то получит результат
-                val text = result.data?.getStringExtra("$keySingIn")
+                val text = result.data?.getStringExtra("$keySingIn", "$keyStateSignIn")
             }
         }
 
         launcherRegister = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){// регистрирует
             result : ActivityResult ->
             if (result.resultCode == RESULT_OK){//если всё окей то получит результат
-                val text = result.data?.getStringExtra("$keyRegister")
+                val text = result.data?.getStringExtra("$keyRegister", "$keyRegister")
             }
         }
 
@@ -46,6 +54,5 @@ private var launcherRegister: ActivityResultLauncher<Intent>? = null //созд�
 
     fun onClickRegister (view: View){
         launcherRegister?.launch(Intent(this, MainActivity2::class.java))
-
     }
 }
