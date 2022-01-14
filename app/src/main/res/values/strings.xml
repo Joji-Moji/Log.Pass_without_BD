@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyFirstTestProj</string>
+    <string name="buttonSignIn">Sign In</string>
+    <string name="buttonRegister">Register</string>
+    <string name="hintPassword">Password</string>
+    <string name="hintEmail">E-mail</string>
+    <string name="hintName">Name</string>
+    <string name="hintSurName">Surname</string>
+
+
+</resources>
