@@ -3,6 +3,7 @@ package com.example.myfirsttestproj
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
@@ -34,14 +35,17 @@ private var launcherRegister: ActivityResultLauncher<Intent>? = null //созд�
         launcherLogin = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {// регистрирует
                 result: ActivityResult ->
             if (result.resultCode == RESULT_OK) {//если всё окей то получит результат
-                val text = result.data?.getStringExtra("$keySingIn", "$keyStateSignIn")
+                val text = result.data?.getStringExtra("$keySingIn")
+                Log.d("Log", "Nice")
+
             }
         }
 
         launcherRegister = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){// регистрирует
             result : ActivityResult ->
             if (result.resultCode == RESULT_OK){//если всё окей то получит результат
-                val text = result.data?.getStringExtra("$keyRegister", "$keyRegister")
+                val text = result.data?.getStringExtra("$keyRegister")
+                Log.d("Log", "Good")
             }
         }
 
