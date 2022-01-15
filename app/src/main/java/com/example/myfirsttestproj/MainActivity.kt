@@ -9,7 +9,6 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.myfirsttestproj.Constance.Constance_key.keyRegister
 import com.example.myfirsttestproj.Constance.Constance_key.keySingIn
-import com.example.myfirsttestproj.Constance.Constance_key.keyStateRegister
 import com.example.myfirsttestproj.Constance.Constance_key.keyStateSignIn
 import com.example.myfirsttestproj.databinding.ActivityMainBinding
 
@@ -24,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
 private lateinit var viewBinding: ActivityMainBinding
 
-
 private var launcherLogin: ActivityResultLauncher<Intent>? = null //создаем коллбэк и даем ему пустой нулл
 private var launcherRegister: ActivityResultLauncher<Intent>? = null //создаем коллбэк и даем ему пустой нулл
 
@@ -35,19 +33,15 @@ private var launcherRegister: ActivityResultLauncher<Intent>? = null //созд�
 
         launcherLogin = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {// регистрирует
                 result: ActivityResult ->
-
             if (result.resultCode == RESULT_OK) {//если всё окей то получит результат
-                val text = result.data?.getStringExtra("$keySingIn")
-
+                val text = result.data?.getStringExtra("$keySingIn", "$keyStateSignIn")
             }
         }
 
         launcherRegister = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){// регистрирует
             result : ActivityResult ->
-
             if (result.resultCode == RESULT_OK){//если всё окей то получит результат
-                val text = result.data?.putExtra("$keyRegister", "$keyStateRegister")
-                viewBinding.textInfo.text = name
+                val text = result.data?.getStringExtra("$keyRegister", "$keyRegister")
             }
         }
 
