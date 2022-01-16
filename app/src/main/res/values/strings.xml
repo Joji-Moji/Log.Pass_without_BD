@@ -8,4 +8,6 @@
     <string name="hintSurName">Surname</string>
     <string name="buttonAvatar">Avatar</string>
     <string name="avatar">Avatar</string>
+    <string name="logout">Logout</string>
+
 </resources>

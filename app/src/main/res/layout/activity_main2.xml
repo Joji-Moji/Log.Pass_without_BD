@@ -9,38 +9,38 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="72dp"
         android:contentDescription="@string/avatar"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/avatar" />
 
     <EditText
         android:id="@+id/editE_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/hintEmail"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <EditText
         android:id="@+id/editSurname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/hintSurName"
         android:importantForAutofill="no"
@@ -48,22 +48,22 @@
         android:minHeight="48dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/editName"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editName"
         app:layout_constraintTop_toBottomOf="@+id/editName" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_width="209dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
         android:onClick="onClickAvatar"
         android:text="@string/buttonAvatar"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editName"
-        app:layout_constraintEnd_toEndOf="@+id/editName"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="@+id/editName" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/editPass"
@@ -72,45 +72,44 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/hintPassword"
-        android:inputType="numberPassword"
+        android:inputType="textPassword|numberPassword"
         android:minHeight="48dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/editE_mail"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editE_mail"
         app:layout_constraintTop_toBottomOf="@+id/editE_mail"
-        tools:ignore="TextContrastCheck,TextContrastCheck"         />
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/editName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/hintName"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editPass"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editPass"
+        app:layout_constraintTop_toBottomOf="@+id/editPass"
         tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="209dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:onClick="onClickSignIn"
         android:text="@string/buttonSignIn"
         android:textColor="#81D4FA"
-        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/editPass"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editPass"
-        app:layout_constraintTop_toBottomOf="@+id/editPass"
+        app:layout_constraintTop_toBottomOf="@+id/editSurname"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
